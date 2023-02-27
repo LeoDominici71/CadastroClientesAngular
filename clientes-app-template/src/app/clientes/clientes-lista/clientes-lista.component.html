@@ -3,6 +3,18 @@
     <li class="breadcrumb-item active">Consulta</li>
 </ol>
 <div class="row">
+    <div class="col-md-12">
+
+        <div class="alert alert-success" role="alert" *ngIf="mensagemSucesso">
+            {{mensagemSucesso}}
+          </div>
+          
+          <div class="alert alert-danger" role="alert" *ngFor="mensagemErro">
+            {{ mensagemErro }}
+          </div>
+    </div>
+</div>
+<div class="row">
     <div class="col-md-2">
         <button class="btn btn-warning" (click)="novoCadastro()"><i class="fa fa-plus"></i>Novo
         </button>
@@ -28,9 +40,35 @@
                         <td>{{ cliente.nome }}</td>
                         <td>{{ cliente.cpf }}</td>
                         <td>{{ cliente.dataCadastro }}</td>
-                        <td></td>
+                        <td>
+                            <button class="btn btn-primary" routerLink="/clientes-form/{{ cliente.id }}">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                            <button class="btn btn-danger" (click)="preparaDelecao(cliente)" data-toggle="modal" data-target="#modalDelecao">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <div id="modalDelecao" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>confirma</h4>
+
+                </div>
+                <div class="modal-body" *ngIf="clienteSelecionado">
+                   Confirma a delecao do(a) cliente  {{ clienteSelecionado.nome }}?
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" (click)="deletarCliente()" data-dismiss="modal">Confirmar</button>
+                    <button class="btn btn-default" data-dismiss="modal">Cancela</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
+
