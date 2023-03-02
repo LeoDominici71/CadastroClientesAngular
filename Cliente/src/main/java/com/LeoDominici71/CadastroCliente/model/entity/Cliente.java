@@ -36,7 +36,7 @@ public class Cliente {
 	@CPF(message = "cpf invalido")
 	private String cpf;
 	@Column(name = "data_cadastro", updatable = false)
-	@JsonFormat(pattern = "dd/MM/yyyy")
+	
 	private LocalDate dataCadastro;
 
 	@PrePersist
