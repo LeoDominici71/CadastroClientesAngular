@@ -9,21 +9,28 @@
                 Home
                 </a>
                 <div class="sb-sidenav-menu-heading">Cadastros</div>
-                <a class="nav-link collapsed" routerLink="/clientes-lista"
+                <a class="nav-link collapsed" routerLink="/clientes"
                 data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                     ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Clientes
                 </a>
-                <a class="nav-link collapsed" routerLink="/servico-listagem"
+                <a class="nav-link collapsed" routerLink="/servico"
                 data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                     ><div class="sb-nav-link-icon"><i class="fas fa-address-card"></i></div>
                     Servicos Prestados
                 </a>
+
+                <div class="sb-sidenav-menu-heading">Logout</div>
+                <a class="nav-link collapsed" (click)="logout();" href="#"
+                data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
+                    ><div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i></div>
+                    Sair
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">
-            <div class="small">Logged in as:</div>
-            Start Bootstrap
+            <div class="small">Usuario Logado:</div>
+            {{ usuarioLogado }}
         </div>
     </nav>
 </div>

@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,13 +24,11 @@ import com.LeoDominici71.CadastroCliente.model.repository.ServicoRepository;
 import com.LeoDominici71.CadastroCliente.rest.dto.ServicoDTO;
 import com.LeoDominici71.CadastroCliente.util.BigDecimalConverter;
 
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/servicos")
 @RequiredArgsConstructor
-@CrossOrigin("http://localhost:4200")
 public class ServicoController {
 
 	private final ClienteRepository clienteRepository;

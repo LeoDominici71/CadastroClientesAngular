@@ -1,6 +1,7 @@
 package com.LeoDominici71.CadastroCliente.rest.dto;
 
-import jakarta.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotEmpty;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

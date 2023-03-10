@@ -2,7 +2,7 @@
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-bitem active">Consulta</li>
 </ol>
-<div class="container">
+
     <form #consultaForm="ngForm" (submit)="consultar()">
         <div class="row">
             <div class="col-md-6"><label for="inputNome">Nome Cliente:</label>
@@ -27,7 +27,7 @@
                     <i class="fa fa-search"></i> Consultar
                 </button>
                 <button type="button"
-                routerLink="/servico-form" 
+                routerLink="/servico/form" 
                 class=" btn btn-warning"> 
                 <i class="fa fa-plus"></i> Novo
                 </button>
@@ -62,4 +62,3 @@
             </table>
         </div>
     </div>
-</div>
